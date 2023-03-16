@@ -1,12 +1,18 @@
 import express from "express";
-import dotenv from 'dotenv'
-dotenv.config()
-
+import router from "./routes/routes.js";
+import dotenv from "dotenv";
+import cors from "cors";
+import DBConnection from "./db/db.js";
+dotenv.config();
 
 const app = express();
 
-const PORT = process.env.PORT || 5000
+//
+app.use(cors());
+app.use("/", router);
 
-app.listen(PORT, () => console.log('Server on ' + PORT))
+const PORT = process.env.PORT || 5000;
 
+DBConnection();
 
+app.listen(PORT, () => console.log("Server on " + PORT));
