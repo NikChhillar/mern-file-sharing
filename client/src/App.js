@@ -38,7 +38,7 @@ function App() {
       <img src={url} alt="kartik-kun" className="img" />
       <div className="wrapper">
         <h1>File Sharing Project</h1>
-        <p>Upload the file and get a link to dwonload the file</p>
+        <p>Upload the file and get a link to download the file</p>
         <button onClick={() => onBtnClick()}>Upload</button>
         <input
           type="file"
